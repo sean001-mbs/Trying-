@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF‑8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Flash Sale – Imara Market</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+ <header class="bg-white shadow p-4">
+   <h1 class="text-xl font-bold">Flash Sale</h1>
+   <nav class="mt-2 space-x-4"><a href="index.html" class="hover:underline">Home</a></nav>
+ </header>
+ <main class="p-6">
+   <section class="bg-yellow-100 p-4 rounded-lg mb-6">
+     <h2 class="text-lg font-semibold">Hot Deals Ending Soon</h2>
+     <div id="countdown" class="text-2xl font-mono mt-2"></div>
+   </section>
+   <script>
+     let t = 1*3600 + 35*60 + 5;
+     const countdown = document.getElementById("countdown");
+     function tick(){
+       let h = String(Math.floor(t/3600)).padStart(2,'0');
+       let m = String(Math.floor((t%3600)/60)).padStart(2,'0');
+       let s = String(t%60).padStart(2,'0');
+       countdown.textContent = `${h}:${m}:${s}`;
+       if(t>0) t--;
+     }
+     tick(); setInterval(tick,1000);
+   </script>
+ </main>
+</body>
+     </html>
